@@ -1,0 +1,966 @@
+
+
+/**DATA**/
+
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("TC.CRM.DAL")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("TC.CRM.DAL")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("f5fa11c5-70a7-41d5-b4d6-712acc67bee1")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers 
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TC.CRM.Entity;
+
+namespace TC.CRM.DAL
+{
+    public class Class1
+    {
+    }
+}
+
+
+/**LOGIC**/
+
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("TC.CRM.Entity")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("TC.CRM.Entity")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("0fe75f58-9b6f-48bc-98c8-cc18e1700be0")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers 
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TC.CRM.Entity
+{
+    public class Class1
+    {
+    }
+}
+
+
+/**PRESENTATION TIER**/
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <WebPublishMethod>FileSystem</WebPublishMethod>
+    <SiteUrlToLaunchAfterPublish />
+    <publishUrl>G:\Publish-Website-4.5</publishUrl>
+    <DeleteExistingFiles>True</DeleteExistingFiles>
+  </PropertyGroup>
+</Project>
+
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("TC.CRM.Presentation")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("TC.CRM.Presentation")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("5c922887-a320-483e-b63d-cf717c43d4bc")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+
+ACCOUNT FOLDER
+    LOGIN.aspx
+    
+    <%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TC.CRM.Presentation.Account.Login" %>
+<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <hgroup class="title">
+        <h1><%: Title %>.</h1>
+    </hgroup>
+    <section id="loginForm">
+        <h2>Use a local account to log in.</h2>
+        <asp:Login runat="server" ViewStateMode="Disabled" RenderOuterTable="false">
+            <LayoutTemplate>
+                <p class="validation-summary-errors">
+                    <asp:Literal runat="server" ID="FailureText" />
+                </p>
+                <fieldset>
+                    <legend>Log in Form</legend>
+                    <ol>
+                        <li>
+                            <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
+                            <asp:TextBox runat="server" ID="UserName" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
+                        </li>
+                        <li>
+                            <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
+                            <asp:TextBox runat="server" ID="Password" TextMode="Password" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." />
+                        </li>
+                        <li>
+                            <asp:CheckBox runat="server" ID="RememberMe" />
+                            <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
+                        </li>
+                    </ol>
+                    <asp:Button runat="server" CommandName="Login" Text="Log in" />
+                </fieldset>
+            </LayoutTemplate>
+        </asp:Login>
+        <p>
+            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
+            if you don't have an account.
+        </p>
+    </section>
+
+    <section id="socialLoginForm">
+        <h2>Use another service to log in.</h2>
+        <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
+    </section>
+</asp:Content>
+
+LOGIN CODE BEHIND
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace TC.CRM.Presentation.Account
+{
+    public partial class Login : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            RegisterHyperLink.NavigateUrl = "Register.aspx";
+            OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
+
+            var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
+            if (!String.IsNullOrEmpty(returnUrl))
+            {
+                RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+            }
+        }
+    }
+}
+
+MANAGE.aspx
+
+<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="TC.CRM.Presentation.Account.Manage" %>
+<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <hgroup class="title">
+        <h1><%: Title %>.</h1>
+    </hgroup>
+
+    <section id="passwordForm">
+        <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
+            <p class="message-success"><%: SuccessMessage %></p>
+        </asp:PlaceHolder>
+
+        <p>You're logged in as <strong><%: User.Identity.Name %></strong>.</p>
+
+        <asp:PlaceHolder runat="server" ID="setPassword" Visible="false">
+            <p>
+                You do not have a local password for this site. Add a local
+                password so you can log in without an external login.
+            </p>
+            <fieldset>
+                <legend>Set Password Form</legend>
+                <ol>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="password">Password</asp:Label>
+                        <asp:TextBox runat="server" ID="password" TextMode="Password" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="password"
+                            CssClass="field-validation-error" ErrorMessage="The password field is required."
+                            Display="Dynamic" ValidationGroup="SetPassword" />
+                        
+                        <asp:ModelErrorMessage runat="server" ModelStateKey="NewPassword" AssociatedControlID="password"
+                            CssClass="field-validation-error" SetFocusOnError="true" />
+                        
+                    </li>
+                    <li>
+                        <asp:Label runat="server" AssociatedControlID="confirmPassword">Confirm password</asp:Label>
+                        <asp:TextBox runat="server" ID="confirmPassword" TextMode="Password" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
+                            CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The confirm password field is required."
+                            ValidationGroup="SetPassword" />
+                        <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="confirmPassword"
+                            CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match."
+                            ValidationGroup="SetPassword" />
+                    </li>
+                </ol>
+                <asp:Button runat="server" Text="Set Password" ValidationGroup="SetPassword" OnClick="setPassword_Click" />
+            </fieldset>
+        </asp:PlaceHolder>
+
+        <asp:PlaceHolder runat="server" ID="changePassword" Visible="false">
+            <h3>Change password</h3>
+            <asp:ChangePassword runat="server" CancelDestinationPageUrl="~/" ViewStateMode="Disabled" RenderOuterTable="false" SuccessPageUrl="Manage.aspx?m=ChangePwdSuccess">
+                <ChangePasswordTemplate>
+                    <p class="validation-summary-errors">
+                        <asp:Literal runat="server" ID="FailureText" />
+                    </p>
+                    <fieldset class="changePassword">
+                        <legend>Change password details</legend>
+                        <ol>
+                            <li>
+                                <asp:Label runat="server" ID="CurrentPasswordLabel" AssociatedControlID="CurrentPassword">Current password</asp:Label>
+                                <asp:TextBox runat="server" ID="CurrentPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="CurrentPassword"
+                                    CssClass="field-validation-error" ErrorMessage="The current password field is required."
+                                    ValidationGroup="ChangePassword" />
+                            </li>
+                            <li>
+                                <asp:Label runat="server" ID="NewPasswordLabel" AssociatedControlID="NewPassword">New password</asp:Label>
+                                <asp:TextBox runat="server" ID="NewPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="NewPassword"
+                                    CssClass="field-validation-error" ErrorMessage="The new password is required."
+                                    ValidationGroup="ChangePassword" />
+                            </li>
+                            <li>
+                                <asp:Label runat="server" ID="ConfirmNewPasswordLabel" AssociatedControlID="ConfirmNewPassword">Confirm new password</asp:Label>
+                                <asp:TextBox runat="server" ID="ConfirmNewPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmNewPassword"
+                                    CssClass="field-validation-error" Display="Dynamic" ErrorMessage="Confirm new password is required."
+                                    ValidationGroup="ChangePassword" />
+                                <asp:CompareValidator runat="server" ControlToCompare="NewPassword" ControlToValidate="ConfirmNewPassword"
+                                    CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The new password and confirmation password do not match."
+                                    ValidationGroup="ChangePassword" />
+                            </li>
+                        </ol>
+                        <asp:Button runat="server" CommandName="ChangePassword" Text="Change password" ValidationGroup="ChangePassword" />
+                    </fieldset>
+                </ChangePasswordTemplate>
+            </asp:ChangePassword>
+        </asp:PlaceHolder>
+    </section>
+
+    <section id="externalLoginsForm">
+        
+        <asp:ListView runat="server"
+            ItemType="Microsoft.AspNet.Membership.OpenAuth.OpenAuthAccountData"
+            SelectMethod="GetExternalLogins" DeleteMethod="RemoveExternalLogin" DataKeyNames="ProviderName,ProviderUserId">
+        
+            <LayoutTemplate>
+                <h3>Registered external logins</h3>
+                <table>
+                    <thead><tr><th>Service</th><th>User Name</th><th>Last Used</th><th>&nbsp;</th></tr></thead>
+                    <tbody>
+                        <tr runat="server" id="itemPlaceholder"></tr>
+                    </tbody>
+                </table>
+            </LayoutTemplate>
+            <ItemTemplate>
+                <tr>
+                    
+                    <td><%#: Item.ProviderDisplayName %></td>
+                    <td><%#: Item.ProviderUserName %></td>
+                    <td><%#: ConvertToDisplayDateTime(Item.LastUsedUtc) %></td>
+                    <td>
+                        <asp:Button runat="server" Text="Remove" CommandName="Delete" CausesValidation="false" 
+                            ToolTip='<%# "Remove this " + Item.ProviderDisplayName + " login from your account" %>'
+                            Visible="<%# CanRemoveExternalLogins %>" />
+                    </td>
+                    
+                </tr>
+            </ItemTemplate>
+        </asp:ListView>
+
+        <h3>Add an external login</h3>
+        <uc:OpenAuthProviders runat="server" ReturnUrl="~/Account/Manage.aspx" />
+    </section>
+</asp:Content>
+
+MANAGE CODE BEHIND
+
+    using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using Microsoft.AspNet.Membership.OpenAuth;
+
+namespace TC.CRM.Presentation.Account
+{
+    public partial class Manage : System.Web.UI.Page
+    {
+        protected string SuccessMessage
+        {
+            get;
+            private set;
+        }
+
+        protected bool CanRemoveExternalLogins
+        {
+            get;
+            private set;
+        }
+
+        protected void Page_Load()
+        {
+            if (!IsPostBack)
+            {
+                // Determine the sections to render
+                var hasLocalPassword = OpenAuth.HasLocalPassword(User.Identity.Name);
+                setPassword.Visible = !hasLocalPassword;
+                changePassword.Visible = hasLocalPassword;
+
+                CanRemoveExternalLogins = hasLocalPassword;
+
+                // Render success message
+                var message = Request.QueryString["m"];
+                if (message != null)
+                {
+                    // Strip the query string from action
+                    Form.Action = ResolveUrl("~/Account/Manage.aspx");
+
+                    SuccessMessage =
+                        message == "ChangePwdSuccess" ? "Your password has been changed."
+                        : message == "SetPwdSuccess" ? "Your password has been set."
+                        : message == "RemoveLoginSuccess" ? "The external login was removed."
+                        : String.Empty;
+                    successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
+                }
+            }
+
+        }
+
+        protected void setPassword_Click(object sender, EventArgs e)
+        {
+            if (IsValid)
+            {
+                var result = OpenAuth.AddLocalPassword(User.Identity.Name, password.Text);
+                if (result.IsSuccessful)
+                {
+                    Response.Redirect("~/Account/Manage.aspx?m=SetPwdSuccess");
+                }
+                else
+                {
+
+                    ModelState.AddModelError("NewPassword", result.ErrorMessage);
+
+                }
+            }
+        }
+
+
+        public IEnumerable<OpenAuthAccountData> GetExternalLogins()
+        {
+            var accounts = OpenAuth.GetAccountsForUser(User.Identity.Name);
+            CanRemoveExternalLogins = CanRemoveExternalLogins || accounts.Count() > 1;
+            return accounts;
+        }
+
+        public void RemoveExternalLogin(string providerName, string providerUserId)
+        {
+            var m = OpenAuth.DeleteAccount(User.Identity.Name, providerName, providerUserId)
+                ? "?m=RemoveLoginSuccess"
+                : String.Empty;
+            Response.Redirect("~/Account/Manage.aspx" + m);
+        }
+
+
+        protected static string ConvertToDisplayDateTime(DateTime? utcDateTime)
+        {
+            // You can change this method to convert the UTC date time into the desired display
+            // offset and format. Here we're converting it to the server timezone and formatting
+            // as a short date and a long time string, using the current thread culture.
+            return utcDateTime.HasValue ? utcDateTime.Value.ToLocalTime().ToString("G") : "[never]";
+        }
+    }
+}
+
+REGISTER.ASPX
+
+<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TC.CRM.Presentation.Account.Register" %>
+
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <hgroup class="title">
+        <h1><%: Title %>.</h1>
+        <h2>Use the form below to create a new account.</h2>
+    </hgroup>
+
+    <asp:CreateUserWizard runat="server" ID="RegisterUser" ViewStateMode="Disabled" OnCreatedUser="RegisterUser_CreatedUser">
+        <LayoutTemplate>
+            <asp:PlaceHolder runat="server" ID="wizardStepPlaceholder" />
+            <asp:PlaceHolder runat="server" ID="navigationPlaceholder" />
+        </LayoutTemplate>
+        <WizardSteps>
+            <asp:CreateUserWizardStep runat="server" ID="RegisterUserWizardStep">
+                <ContentTemplate>
+                    <p class="message-info">
+                        Passwords are required to be a minimum of <%: Membership.MinRequiredPasswordLength %> characters in length.
+                    </p>
+
+                    <p class="validation-summary-errors">
+                        <asp:Literal runat="server" ID="ErrorMessage" />
+                    </p>
+
+                    <fieldset>
+                        <legend>Registration Form</legend>
+                        <ol>
+                            <li>
+                                <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
+                                <asp:TextBox runat="server" ID="UserName" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
+                                    CssClass="field-validation-error" ErrorMessage="The user name field is required." />
+                            </li>
+                            <li>
+                                <asp:Label runat="server" AssociatedControlID="Email">Email address</asp:Label>
+                                <asp:TextBox runat="server" ID="Email" TextMode="Email" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                                    CssClass="field-validation-error" ErrorMessage="The email address field is required." />
+                            </li>
+                            <li>
+                                <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
+                                <asp:TextBox runat="server" ID="Password" TextMode="Password" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                                    CssClass="field-validation-error" ErrorMessage="The password field is required." />
+                            </li>
+                            <li>
+                                <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Confirm password</asp:Label>
+                                <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
+                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                                <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
+                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                            </li>
+                        </ol>
+                        <asp:Button runat="server" CommandName="MoveNext" Text="Register" />
+                    </fieldset>
+                </ContentTemplate>
+                <CustomNavigationTemplate />
+            </asp:CreateUserWizardStep>
+        </WizardSteps>
+    </asp:CreateUserWizard>
+</asp:Content>
+
+REGISTER CODE BEHIND
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Microsoft.AspNet.Membership.OpenAuth;
+
+namespace TC.CRM.Presentation.Account
+{
+    public partial class Register : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+        }
+
+        protected void RegisterUser_CreatedUser(object sender, EventArgs e)
+        {
+            FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
+
+            string continueUrl = RegisterUser.ContinueDestinationPageUrl;
+            if (!OpenAuth.IsLocalUrl(continueUrl))
+            {
+                continueUrl = "~/";
+            }
+            Response.Redirect(continueUrl);
+        }
+    }
+}
+
+REGISTER_EXTERNAL_LOGIN.ASPX
+
+<%@ Page Language="C#" Title="Register an external login" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterExternalLogin.aspx.cs" Inherits="TC.CRM.Presentation.Account.RegisterExternalLogin" %>
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    <hgroup class="title">
+        <h1>Register with your <%: ProviderDisplayName %> account</h1>
+        <h2><%: ProviderUserName %>.</h2>
+    </hgroup>
+
+    
+    <asp:ModelErrorMessage runat="server" ModelStateKey="Provider" CssClass="field-validation-error" />
+    
+
+    <asp:PlaceHolder runat="server" ID="userNameForm">
+        <fieldset>
+            <legend>Association Form</legend>
+            <p>
+                You've authenticated with <strong><%: ProviderDisplayName %></strong> as
+                <strong><%: ProviderUserName %></strong>. Please enter a user name below for the current site
+                and click the Log in button.
+            </p>
+            <ol>
+                <li class="email">
+                    <asp:Label runat="server" AssociatedControlID="userName">User name</asp:Label>
+                    <asp:TextBox runat="server" ID="userName" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="userName"
+                        Display="Dynamic" ErrorMessage="User name is required" ValidationGroup="NewUser" />
+                    
+                    <asp:ModelErrorMessage runat="server" ModelStateKey="UserName" CssClass="field-validation-error" />
+                    
+                </li>
+            </ol>
+            <asp:Button runat="server" Text="Log in" ValidationGroup="NewUser" OnClick="logIn_Click" />
+            <asp:Button runat="server" Text="Cancel" CausesValidation="false" OnClick="cancel_Click" />
+        </fieldset>
+    </asp:PlaceHolder>
+</asp:Content>
+
+REGISTER_EXTERNAL_LOGIN CODE BEHIND
+
+using System;
+using System.Web;
+using System.Web.Security;
+using DotNetOpenAuth.AspNet;
+using Microsoft.AspNet.Membership.OpenAuth;
+
+namespace TC.CRM.Presentation.Account
+{
+    public partial class RegisterExternalLogin : System.Web.UI.Page
+    {
+        protected string ProviderName
+        {
+            get { return (string)ViewState["ProviderName"] ?? String.Empty; }
+            private set { ViewState["ProviderName"] = value; }
+        }
+
+        protected string ProviderDisplayName
+        {
+            get { return (string)ViewState["ProviderDisplayName"] ?? String.Empty; }
+            private set { ViewState["ProviderDisplayName"] = value; }
+        }
+
+        protected string ProviderUserId
+        {
+            get { return (string)ViewState["ProviderUserId"] ?? String.Empty; }
+            private set { ViewState["ProviderUserId"] = value; }
+        }
+
+        protected string ProviderUserName
+        {
+            get { return (string)ViewState["ProviderUserName"] ?? String.Empty; }
+            private set { ViewState["ProviderUserName"] = value; }
+        }
+
+        protected void Page_Load()
+        {
+            if (!IsPostBack)
+            {
+                ProcessProviderResult();
+            }
+        }
+
+        protected void logIn_Click(object sender, EventArgs e)
+        {
+            CreateAndLoginUser();
+        }
+
+        protected void cancel_Click(object sender, EventArgs e)
+        {
+            RedirectToReturnUrl();
+        }
+
+        private void ProcessProviderResult()
+        {
+            // Process the result from an auth provider in the request
+            ProviderName = OpenAuth.GetProviderNameFromCurrentRequest();
+
+            if (String.IsNullOrEmpty(ProviderName))
+            {
+                Response.Redirect(FormsAuthentication.LoginUrl);
+            }
+
+            // Build the redirect url for OpenAuth verification
+            var redirectUrl = "~/Account/RegisterExternalLogin.aspx";
+            var returnUrl = Request.QueryString["ReturnUrl"];
+            if (!String.IsNullOrEmpty(returnUrl))
+            {
+                redirectUrl += "?ReturnUrl=" + HttpUtility.UrlEncode(returnUrl);
+            }
+
+            // Verify the OpenAuth payload
+            var authResult = OpenAuth.VerifyAuthentication(redirectUrl);
+            ProviderDisplayName = OpenAuth.GetProviderDisplayName(ProviderName);
+            if (!authResult.IsSuccessful)
+            {
+                Title = "External login failed";
+                userNameForm.Visible = false;
+
+                ModelState.AddModelError("Provider", String.Format("External login {0} failed.", ProviderDisplayName));
+
+                // To view this error, enable page tracing in web.config (<system.web><trace enabled="true"/></system.web>) and visit ~/Trace.axd
+                Trace.Warn("OpenAuth", String.Format("There was an error verifying authentication with {0})", ProviderDisplayName), authResult.Error);
+                return;
+            }
+
+            // User has logged in with provider successfully
+            // Check if user is already registered locally
+            if (OpenAuth.Login(authResult.Provider, authResult.ProviderUserId, createPersistentCookie: false))
+            {
+                RedirectToReturnUrl();
+            }
+
+            // Store the provider details in ViewState
+            ProviderName = authResult.Provider;
+            ProviderUserId = authResult.ProviderUserId;
+            ProviderUserName = authResult.UserName;
+
+            // Strip the query string from action
+            Form.Action = ResolveUrl(redirectUrl);
+
+            if (User.Identity.IsAuthenticated)
+            {
+                // User is already authenticated, add the external login and redirect to return url
+                OpenAuth.AddAccountToExistingUser(ProviderName, ProviderUserId, ProviderUserName, User.Identity.Name);
+                RedirectToReturnUrl();
+            }
+            else
+            {
+                // User is new, ask for their desired membership name
+                userName.Text = authResult.UserName;
+            }
+        }
+
+        private void CreateAndLoginUser()
+        {
+            if (!IsValid)
+            {
+                return;
+            }
+
+            var createResult = OpenAuth.CreateUser(ProviderName, ProviderUserId, ProviderUserName, userName.Text);
+            if (!createResult.IsSuccessful)
+            {
+
+                ModelState.AddModelError("UserName", createResult.ErrorMessage);
+
+            }
+            else
+            {
+                // User created & associated OK
+                if (OpenAuth.Login(ProviderName, ProviderUserId, createPersistentCookie: false))
+                {
+                    RedirectToReturnUrl();
+                }
+            }
+        }
+
+        private void RedirectToReturnUrl()
+        {
+            var returnUrl = Request.QueryString["ReturnUrl"];
+            if (!String.IsNullOrEmpty(returnUrl) && OpenAuth.IsLocalUrl(returnUrl))
+            {
+                Response.Redirect(returnUrl);
+            }
+            else
+            {
+                Response.Redirect("~/");
+            }
+        }
+    }
+}
+
+ACCOUNT FOLDER
+    WEBCONFIG
+    
+      <?xml version="1.0"?>
+<configuration>
+
+  <location path="Manage.aspx">
+    <system.web>
+      <authorization>
+        <deny users="?"/>
+      </authorization>
+    </system.web>
+  </location>
+
+</configuration>
+
+
+APP_START FOLDER
+      BundleConfig.cs
+      
+        using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Optimization;
+
+namespace TC.CRM.Presentation
+{
+    public class BundleConfig
+    {
+        // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254726
+        public static void RegisterBundles(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/bundles/WebFormsJs").Include(
+                  "~/Scripts/WebForms/WebForms.js",
+                  "~/Scripts/WebForms/WebUIValidation.js",
+                  "~/Scripts/WebForms/MenuStandards.js",
+                  "~/Scripts/WebForms/Focus.js",
+                  "~/Scripts/WebForms/GridView.js",
+                  "~/Scripts/WebForms/DetailsView.js",
+                  "~/Scripts/WebForms/TreeView.js",
+                  "~/Scripts/WebForms/WebParts.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/MsAjaxJs").Include(
+                "~/Scripts/WebForms/MsAjax/MicrosoftAjax.js",
+                "~/Scripts/WebForms/MsAjax/MicrosoftAjaxApplicationServices.js",
+                "~/Scripts/WebForms/MsAjax/MicrosoftAjaxTimer.js",
+                "~/Scripts/WebForms/MsAjax/MicrosoftAjaxWebForms.js"));
+
+            // Use the Development version of Modernizr to develop with and learn from. Then, when you’re
+            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need
+            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+                "~/Scripts/modernizr-*"));
+        }
+    }
+}
+
+************ADD NECCESARY SCRIPTS IN FOLDER********************
+
+Default.aspx
+
+    <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TC.CRM.Presentation._Default" %>
+
+<asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><%: Title %>.</h1>
+                <h2>Modify this template to jump-start your ASP.NET application.</h2>
+            </hgroup>
+            <p>
+                To learn more about ASP.NET, visit <a href="http://asp.net" title="ASP.NET Website">http://asp.net</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET.
+                If you have any questions about ASP.NET visit
+                <a href="http://forums.asp.net/18.aspx" title="ASP.NET Forum">our forums</a>.
+            </p>
+        </div>
+    </section>
+</asp:Content>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <h3>We suggest the following:</h3>
+    <ol class="round">
+        <li class="one">
+            <h5>Getting Started</h5>
+            ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
+            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+            <a href="http://go.microsoft.com/fwlink/?LinkId=245146">Learn more…</a>
+        </li>
+        <li class="two">
+            <h5>Add NuGet packages and jump-start your coding</h5>
+            NuGet makes it easy to install and update free libraries and tools.
+            <a href="http://go.microsoft.com/fwlink/?LinkId=245147">Learn more…</a>
+        </li>
+        <li class="three">
+            <h5>Find Web Hosting</h5>
+            You can easily find a web hosting company that offers the right mix of features and price for your applications.
+            <a href="http://go.microsoft.com/fwlink/?LinkId=245143">Learn more…</a>
+        </li>
+    </ol>
+</asp:Content>
+
+
+Default Code Behind
+
+    using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using TC.CRM.DAL;
+using TC.CRM.Entity;
+
+namespace TC.CRM.Presentation
+{
+    public partial class _Default : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+
+Packages.config FILE
+
+    <?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="AspNet.ScriptManager.jQuery" version="1.7.1" targetFramework="net45" />
+  <package id="AspNet.ScriptManager.jQuery.UI.Combined" version="1.8.20" targetFramework="net45" />
+  <package id="DotNetOpenAuth.AspNet" version="4.0.3.12153" targetFramework="net45" />
+  <package id="DotNetOpenAuth.Core" version="4.0.3.12153" targetFramework="net45" />
+  <package id="DotNetOpenAuth.OAuth.Consumer" version="4.0.3.12153" targetFramework="net45" />
+  <package id="DotNetOpenAuth.OAuth.Core" version="4.0.3.12153" targetFramework="net45" />
+  <package id="DotNetOpenAuth.OpenId.Core" version="4.0.3.12153" targetFramework="net45" />
+  <package id="DotNetOpenAuth.OpenId.RelyingParty" version="4.0.3.12153" targetFramework="net45" />
+  <package id="EntityFramework" version="5.0.0" targetFramework="net45" />
+  <package id="jQuery" version="1.7.1.1" targetFramework="net45" />
+  <package id="jQuery.UI.Combined" version="1.8.20.1" targetFramework="net45" />
+  <package id="Microsoft.AspNet.Membership.OpenAuth" version="1.0.0" targetFramework="net45" />
+  <package id="Microsoft.AspNet.Providers.Core" version="1.1" targetFramework="net45" />
+  <package id="Microsoft.AspNet.Providers.LocalDB" version="1.1" targetFramework="net45" />
+  <package id="Microsoft.AspNet.ScriptManager.MSAjax" version="4.5.6" targetFramework="net45" />
+  <package id="Microsoft.AspNet.ScriptManager.WebForms" version="4.5.6" targetFramework="net45" />
+  <package id="Microsoft.AspNet.Web.Optimization" version="1.0.0" targetFramework="net45" />
+  <package id="Microsoft.AspNet.Web.Optimization.WebForms" version="1.0.0" targetFramework="net45" />
+  <package id="Microsoft.Web.Infrastructure" version="1.0.0.0" targetFramework="net45" />
+  <package id="Modernizr" version="2.5.3" targetFramework="net45" />
+  <package id="WebGrease" version="1.1.0" targetFramework="net45" />
+</packages>
+
+
+LOCAL WebConfig.xml File
+
+    <?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <connectionStrings>
+    <add name="DefaultConnection" providerName="System.Data.SqlClient" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-TC.CRM.Presentation-20131123193521;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-TC.CRM.Presentation-20131123193521.mdf" />
+  </connectionStrings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+    <pages>
+      <namespaces>
+        <add namespace="System.Web.Optimization" />
+      </namespaces>
+      <controls>
+        <add assembly="Microsoft.AspNet.Web.Optimization.WebForms" namespace="Microsoft.AspNet.Web.Optimization.WebForms" tagPrefix="webopt" />
+      </controls>
+    </pages>
+    <authentication mode="Forms">
+      <forms loginUrl="~/Account/Login.aspx" timeout="2880" />
+    </authentication>
+    <profile defaultProvider="DefaultProfileProvider">
+      <providers>
+        <add name="DefaultProfileProvider" type="System.Web.Providers.DefaultProfileProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" applicationName="/" />
+      </providers>
+    </profile>
+    <membership defaultProvider="DefaultMembershipProvider">
+      <providers>
+        <add name="DefaultMembershipProvider" type="System.Web.Providers.DefaultMembershipProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" applicationName="/" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="DefaultRoleProvider">
+      <providers>
+        <add name="DefaultRoleProvider" type="System.Web.Providers.DefaultRoleProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" applicationName="/" />
+      </providers>
+    </roleManager>
+    <sessionState mode="InProc" customProvider="DefaultSessionProvider">
+      <providers>
+        <add name="DefaultSessionProvider" type="System.Web.Providers.DefaultSessionStateProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" />
+      </providers>
+    </sessionState>
+  </system.web>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+  </entityFramework>
+</configuration>
+
+****END OF CODE****
+
